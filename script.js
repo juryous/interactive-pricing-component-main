@@ -16,13 +16,13 @@ const displayPrice = function () {
   );
 };
 
-slider.oninput = function () {
+slider.addEventListener('input', function () {
   views.textContent = ranges[this.value];
   displayPrice();
 
-  // progress bar color
+  // Progress bar color
   const value = ((this.value - this.min) / (this.max - this.min)) * 100;
   this.style.background = `linear-gradient(to right, var(--Soft-Cyan) 0%, var(--Soft-Cyan) ${value}%, var(--Light-Grayish-Blue) ${value}%, var(--Light-Grayish-Blue) 100%)`;
-};
+});
 
 billing.addEventListener('click', displayPrice);
